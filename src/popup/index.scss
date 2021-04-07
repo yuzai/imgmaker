@@ -1,0 +1,22 @@
+.wrapper {
+    width: 330px;
+    box-sizing: border-box;
+    padding: 15px 15px;
+    
+    & h1 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+}
+.count {
+    height: 0;
+    color: #fff;
+}
+.canvas-wrapper {
+    margin: 15px 0;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
