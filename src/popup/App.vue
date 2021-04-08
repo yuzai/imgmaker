@@ -103,11 +103,23 @@ export default {
         url: `https://image.baidu.com/search/acjson?tn=resultjson_com&ipn=rj&ct=201326592&is=&fp=result&queryWord=${queryWord}&cl=2&lm=-1&ie=utf-8&oe=utf-8&adpicid=&st=-1&z=&ic=0&hd=0&latest=0&copyright=&word=${queryWord}&s=&se=&tab=&width=&height=&face=0&istype=2&qc=&nc=1&fr=&expermode=&force=&pn=${this.pn * imgPerPage}&rn=${imgPerPage}`,
       })
         .then((response) => {
-          this.images = response.data.data;
+          console.log(response);
+          let data;
+          if (typeof response.data === 'string') {
+            try {
+              data = JSON.parse(`${response.data.replace(/[<>]/g, '')}`).data;
+            } catch(e) {
+              console.log(e);
+              data = [];
+            }
+          } else {
+            data = response.data.data;
+          }
+          this.images = data;
           if (!this.images[0]) {
-          this.$message.info('太牛逼了，这个类目下的图片都被你刷完了,换个关键词吧');
-          return;
-        }
+            this.$message.info('太牛逼了，这个类目下的图片都被你刷完了,换个关键词吧');
+            return;
+          }
           this.drawImg(this.images[0].hoverURL || this.images[0].thumbURL);
           this.index++;
           this.pn++;
