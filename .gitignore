@@ -59,4 +59,6 @@ typings/
 
 dist/
 
+dist-zip/
+
 .DS_Store

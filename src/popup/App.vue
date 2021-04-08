@@ -179,6 +179,7 @@ export default {
     },
     saveImg() {
       const img = new Image();
+      img.crossOrigin = "Anonymous";
       img.onload = () => {
         const canvas = document.createElement('canvas');
         const width = this.width;
@@ -247,7 +248,12 @@ export default {
       }));
     },
     getConfig() {
-      const config = JSON.parse(window.localStorage.getItem('img-maker-config') || {}) || defaultConfig;
+      let config = defaultConfig;
+      try {
+        config = JSON.parse(window.localStorage.getItem('img-maker-config')) || defaultConfig;
+      } catch (e) {
+        console.log(e);
+      }
       this.width = config.width;
       this.height = config.height;
       this.type = config.type;
