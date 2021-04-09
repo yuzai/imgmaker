@@ -1,5 +1,7 @@
 # imgmaker
-[imgmaker](https://chrome.google.com/webstore/detail/imgmaker/gcnibpcodipjdbobdnfihkljfdojhgdb?hl=zh-CN)是一款chrome插件，可以根据指定的尺寸、关键字，生成对应尺寸的图片并提供下载功能，欢迎试用
+[imgmaker](https://chrome.google.com/webstore/detail/imgmaker/gcnibpcodipjdbobdnfihkljfdojhgdb?hl=zh-CN)是一款chrome插件，可以根据指定的尺寸、关键字，生成对应尺寸的图片并提供下载功能，欢迎试用。chrome商店需要梯子，或者手动开发build出来也可。
+
+梯子没有可以试试这个[梯子](https://91kan.us/register?aff=91793)，非免费，但是网速还可，比较稳定
 
 ## 开发方法
 
